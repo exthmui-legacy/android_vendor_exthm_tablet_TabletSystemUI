@@ -1,4 +1,4 @@
-package com.boringdroid.systemui
+package org.exthmui.tablet.systemui
 
 object HandlerConstant {
     const val H_LOAD_SUCCEED = 1000

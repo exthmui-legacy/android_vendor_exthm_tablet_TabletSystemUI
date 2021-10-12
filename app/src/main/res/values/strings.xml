@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="system_ui_overlay_name" translatable="false">Boringdroid SystemUI overlay</string>
-    <string name="system_ui_debug_name">BoringdroidSystemUIDebug</string>
+    <string name="app_name">exTHmUI Tablet SystemUI Plugin</string>
+    <string name="system_ui_overlay_name" translatable="false">exTHmUI SystemUI overlay</string>
+    <string name="system_ui_debug_name" translatable="false">exTHmUISystemUIDebug</string>
 </resources>

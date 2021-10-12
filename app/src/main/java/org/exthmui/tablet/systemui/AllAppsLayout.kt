@@ -1,4 +1,4 @@
-package com.boringdroid.systemui
+package org.exthmui.tablet.systemui
 
 import android.content.Context
 import android.content.Intent

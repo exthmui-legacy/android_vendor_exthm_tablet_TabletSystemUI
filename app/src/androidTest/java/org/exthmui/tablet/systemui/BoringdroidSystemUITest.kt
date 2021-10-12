@@ -1,4 +1,4 @@
-package com.boringdroid.systemui
+package org.exthmui.tablet.systemui
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -12,6 +12,6 @@ class BoringdroidSystemUITest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        Truth.assertThat(appContext.packageName).isEqualTo("com.boringdroid.systemui")
+        Truth.assertThat(appContext.packageName).isEqualTo("org.exthmui.tablet.systemui")
     }
 }

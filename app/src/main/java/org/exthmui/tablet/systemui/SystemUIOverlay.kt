@@ -1,4 +1,4 @@
-package com.boringdroid.systemui
+package org.exthmui.tablet.systemui
 
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver

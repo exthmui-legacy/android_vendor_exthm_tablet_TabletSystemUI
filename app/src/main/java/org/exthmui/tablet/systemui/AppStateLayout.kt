@@ -1,4 +1,4 @@
-package com.boringdroid.systemui
+package org.exthmui.tablet.systemui
 
 import android.app.ActivityManager
 import android.app.ActivityManager.RunningTaskInfo
@@ -244,7 +244,7 @@ class AppStateLayout @JvmOverloads constructor(
             holder.iconIV.setOnClickListener {
                 systemUIActivityManager.moveTaskToFront(taskInfo.id, 0)
                 context.sendBroadcast(
-                    Intent("com.boringdroid.systemui.CLOSE_RECENTS")
+                    Intent("org.exthmui.tablet.systemui.CLOSE_RECENTS")
                 )
             }
             holder.iconIV.setOnLongClickListener { v: View ->
