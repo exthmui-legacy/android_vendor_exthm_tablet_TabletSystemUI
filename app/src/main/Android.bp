@@ -1,0 +1,31 @@
+android_app {
+    name: "TabletSystemUI",
+
+    resource_dirs: ["res"],
+
+    srcs: [
+        "java/**/*.kt",
+        "java/**/*.java",
+        "java/**/I*.aidl",
+    ],
+    aidl: {
+        local_include_dirs: ["java"],
+    },
+
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.recyclerview_recyclerview",
+        "SystemUISharedLib"
+    ],
+
+    libs: [
+        "SystemUIPluginLib"
+    ],
+    optimize: {
+        enabled: false,
+    },
+
+    certificate: "platform",
+    platform_apis: true,
+
+}
