@@ -17,6 +17,14 @@ class AppLoaderTask(context: Context?, target: Handler?) : Runnable {
         }
     }
 
+    class MyComparator : Comparator<AppData> {
+        override fun compare(appDataOne: AppData, appDataTwo: AppData): Int {
+            return appDataOne.name!!.compareTo(
+                appDataTwo.name!!
+            )
+        }
+    }
+
     private val handler = Handler(WORK_THREAD.looper)
     private val loaderContext: WeakReference<Context?>?
     private val loaderTarget: WeakReference<Handler?>?
@@ -43,11 +51,7 @@ class AppLoaderTask(context: Context?, target: Handler?) : Runnable {
             appData.icon = info.getIcon(0)
             loaderAllApps.add(appData)
         }
-        loaderAllApps.sortWith { appDataOne: AppData, appDataTwo: AppData ->
-            appDataOne.name!!.compareTo(
-                appDataTwo.name!!
-            )
-        }
+        loaderAllApps.sortWith(MyComparator())
         val target = target
         target?.sendEmptyMessage(HandlerConstant.H_LOAD_SUCCEED)
     }

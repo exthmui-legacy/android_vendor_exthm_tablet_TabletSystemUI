@@ -222,6 +222,14 @@ class AppStateLayout @JvmOverloads constructor(
             return ViewHolder(taskInfoLayout)
         }
 
+        class MyConsumer : Consumer<Int?> {
+            override fun accept(taskId : Int?) {
+                AM_WRAPPER.removeTask(
+                    taskId!!
+                )
+            }
+        }
+
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val taskInfo = tasks[position]
             val packageName = taskInfo.packageName
@@ -254,12 +262,9 @@ class AppStateLayout @JvmOverloads constructor(
                 holder.iconIV.setOnDragListener(
                     DragDropCloseListener(
                         dragCloseThreshold,
-                        dragCloseThreshold
-                    ) { taskId: Int? ->
-                        AM_WRAPPER.removeTask(
-                            taskId!!
-                        )
-                    })
+                        dragCloseThreshold,
+                        MyConsumer())
+                )
                 v.startDragAndDrop(dragData, shadow, null, DRAG_FLAG_GLOBAL)
                 true
             }
